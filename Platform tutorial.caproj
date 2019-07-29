@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>Platform tutorial</name>
+    <description></description>
+    <version>1</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website></author-website>
+    <app-id></app-id>
+    <unique-id>y9b5u5p3frw5</unique-id>
+    <saved-with-version>22100</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML 5" />
+    </configurations>
+    <window-size>
+        <width>640</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Fullscreen in browser">Off</prop>
+        <prop name="Preview browser">Chrome</prop>
+        <prop name="Preview mode">HTTP</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Flooring" sid="1777750382357475">
+            <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="Floor" sid="6384393673163885" type="number" />
+                <instance-variable name="Points" sid="4033856757798089" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Solid" sid="6625016492856565">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1852691355593735" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="9016994233240255">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Wall" sid="4471067961260721">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Solid" sid="4542420964876075">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7788320603472054" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="PlayerImages" sid="6396363346395107">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="6703396627913464">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7922149845635682" speed="5">
+                    <frame duration="1" hotspotX="0.512195" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.146341" y="0.0857143" />
+                            <point x="0.487805" y="0.0285714" />
+                            <point x="0.878049" y="0.0714286" />
+                            <point x="0.853659" y="0.5" />
+                            <point x="0.878049" y="0.928571" />
+                            <point x="0.487805" y="0.857143" />
+                            <point x="0.097561" y="0.942857" />
+                            <point x="0.097561" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="1" loop="0" name="Standing" pingpong="0" repeatcount="1" repeatto="0" sid="153437816659224" speed="5">
+                    <frame duration="1" hotspotX="0.512195" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.0945122" y="0.0196429" />
+                            <point x="0.996951" y="0.0160714" />
+                            <point x="0.893293" y="0.494643" />
+                            <point x="0.978659" y="1" />
+                            <point x="0.0579268" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="5" loop="1" name="Running" pingpong="0" repeatcount="1" repeatto="0" sid="1996339706046325" speed="8">
+                    <frame duration="1" hotspotX="0.508197" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.508197" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.508197" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.508197" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0.508197" hotspotY="0.5" />
+                </animation>
+                <animation framecount="1" loop="0" name="Falling" pingpong="0" repeatcount="1" repeatto="0" sid="1289312991241043" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.26" y="0.203125" />
+                            <point x="0.5" y="0.015625" />
+                            <point x="0.9" y="0.078125" />
+                            <point x="0.94" y="0.5" />
+                            <point x="0.78" y="0.828125" />
+                            <point x="0.5" y="0.796875" />
+                            <point x="0.24" y="0.8125" />
+                            <point x="0.08" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Player" sid="4607044578618593">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="8620849186741322">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1164526196313826" speed="5">
+                    <frame duration="1" hotspotX="0.333333" hotspotY="0.7" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="StatusText" sid="7581295743040615">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="ResultText" sid="8779298951768493">
+            <plugin id="Text" />
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="8" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
