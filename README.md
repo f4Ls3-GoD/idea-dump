@@ -7,6 +7,7 @@ My code in the MasterScript.cs file:
 public GameObject AimDot;
 
 //Highlight interactible object, show its name
+
 GameObject selectedUnit;
     bool hoverOverActive;
     string hoverName;
@@ -59,13 +60,12 @@ private void InfoAndHighlightInteractibleObjProcessor()
                     }
                 }
             }
-        }
+}
         else
         {
             DeactiveHighlighting();
         }
-        
-    }
+}
  
  private void ActivateHighlightShaderAndHoverInfo(RaycastHit hit2)
     {
@@ -87,7 +87,6 @@ private void InfoAndHighlightInteractibleObjProcessor()
                 }
             }
         }
-
     }
     
 public void DeactiveHighlighting()
