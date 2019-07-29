@@ -11,18 +11,15 @@ GameObject selectedUnit;
     bool hoverOverActive;
     string hoverName;
     Shader StandardShader;
-    public Shader HightlightShader;
-    
+    public Shader HightlightShader
     Renderer rend;
     public int HightlightDistance = 100;
     
 void Start()
     {
-        
         StandardShader = Shader.Find("Standard");
         HightlightShader = Shader.Find("Legacy Shaders/Self-Illumin/Diffuse");
         selectedUnit = null;
-      
     }
 
 void OnGUI()
@@ -43,14 +40,8 @@ void Update()
      
 private void InfoAndHighlightInteractibleObjProcessor()
     {
-        
         Ray ray2 = firstPersonCamera.ScreenPointToRay(Input.mousePosition);
-        
         RaycastHit hit2;
-
-
-
-
         if (Physics.Raycast(ray2, out hit2, HightlightDistance) && (hit2.transform.gameObject.tag == PuzzleActivationTag || hit2.transform.gameObject.tag == EnvActivationTag || hit2.transform.gameObject.tag == PickupTag))
         {
             if (selectedUnit == null)
@@ -59,7 +50,6 @@ private void InfoAndHighlightInteractibleObjProcessor()
             }
             else
             {
-                
                 if (selectedUnit.name != hit2.transform.gameObject.name)
                 {
                     if (selectedUnit.transform.GetComponent<Renderer>() != null)
@@ -67,8 +57,6 @@ private void InfoAndHighlightInteractibleObjProcessor()
                         selectedUnit.transform.GetComponent<Renderer>().material.shader = StandardShader;
                         ActivateHighlightShaderAndHoverInfo(hit2);
                     }
-
-
                 }
             }
         }
@@ -88,11 +76,7 @@ private void InfoAndHighlightInteractibleObjProcessor()
         {
             selectedUnit.transform.GetComponent<Renderer>().material.shader = HightlightShader;
         }
-
-
         var gameObjects = selectedUnit.GetComponentsInChildren<Renderer>();
-
-
         foreach (var item in gameObjects)
         {
             if (item.GetComponent<Renderer>() != null)
@@ -101,9 +85,6 @@ private void InfoAndHighlightInteractibleObjProcessor()
                 {
                     shad.shader = HightlightShader;
                 }
-
-
-               
             }
         }
 
@@ -116,11 +97,8 @@ public void DeactiveHighlighting()
             if (selectedUnit.transform.GetComponent<Renderer>() != null)
             {
                 selectedUnit.transform.GetComponent<Renderer>().material.shader = StandardShader;
-
             }
             var gameObjects = selectedUnit.GetComponentsInChildren<Renderer>();
-
-
             foreach (var item in gameObjects)
             {
                 if (item.GetComponent<Renderer>() != null)
@@ -128,8 +106,7 @@ public void DeactiveHighlighting()
                     foreach (var shad in item.GetComponent<Renderer>().materials)
                     {
                         shad.shader = StandardShader;
-                    }
-                    
+                    }  
                 }
             }
             selectedUnit = null;
